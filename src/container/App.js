@@ -10,20 +10,16 @@ class App extends Component {
       robots: [],
       searchfield: "",
     };
-    console.log("constructor");
   }
 
   componentDidMount() {
-    console.log("didMount");
     fetch("https://jsonplaceholder.typicode.com/users")
       .then((response) => response.json())
       .then((users) => this.setState({ robots: users }));
-    console.log("didMountafter");
   }
 
   onSearchChange = (event) => {
     this.setState({ searchfield: event.target.value });
-    // console.log(event.target.value);
   };
 
   render() {

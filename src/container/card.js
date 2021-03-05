@@ -3,7 +3,7 @@ import React from "react";
 const CardItem = (props) => {
   return (
     <div onClick={props.showCardDetail}>
-      <h2>{props.name}</h2>
+      <h3>{props.name}</h3>
       <p>{props.email}</p>
     </div>
   );
@@ -12,20 +12,14 @@ const CardItem = (props) => {
 const CardDetail = (props) => {
   return (
     <div onClick={props.hideCardDetail}>
-      <h3>{props.username}</h3>
-      <p>{props.phone}</p>
-      <h7>{props.website}</h7>
+      <h3>username: {props.username}</h3>
+      <p>phone: {props.phone}</p>
+      <h7>website: {props.website}</h7>
     </div>
   );
 };
 
 class Card extends React.Component {
-  // constructor(props){
-  //     super(props)
-  //     this.state = {
-  //         showCardDetails: false
-  //     }
-  // }
 
   state = {
     showCardDetails: false,
@@ -57,13 +51,13 @@ class Card extends React.Component {
 
     return (
       <div
-        className={`${backgroundColorForImage[randomIndex]} tc dib br3 pa3 ma2 grow bw2 shadow-5 cards`}
+        className={`${backgroundColorForImage[randomIndex]} tc dib br2 pa3 ma2 grow bw2 shadow-5 cards`}
       >
         <img
-          alt="First robot"
-          src={`https://robohash.org/27${this.props.id}?bgset=bg${backgroundColorForRobot}`}
-          width="275px"
-          height="275px"
+          alt="robot"
+          src={`https://robohash.org/${this.props.id}?bgset=bg${backgroundColorForRobot}`}
+          width="200px"
+          height="200px"
         />
 
         {this.state.showCardDetails ? (
